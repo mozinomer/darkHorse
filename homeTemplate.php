@@ -13,11 +13,11 @@
         			</div>
         			<div class="slider-img-box">
         				<div class="slider-img imgone" >
-        					
+
         					<img src="<?php echo get_template_directory_uri(); ?>/images/vid1.JPG" alt="">
         				</div>
         				<div class="slider-img imgtwo" >
-        					
+
         					<img src="<?php echo get_template_directory_uri(); ?>/images/vid2.JPG" alt="">
         				</div>
         			</div>
@@ -33,11 +33,11 @@
         			</div>
         			<div class="slider-img-box">
         				<div class="slider-img imgone" >
-        					
+
         					<img src="<?php echo get_template_directory_uri(); ?>/images/photo1.jpg" alt="">
         				</div>
         				<div class="slider-img imgtwo" >
-        					
+
         					<img src="<?php echo get_template_directory_uri(); ?>/images/photo2.jpg" alt="">
         				</div>
         			</div>
@@ -53,11 +53,11 @@
         			</div>
         			<div class="slider-img-box">
         				<div class="slider-img imgone" >
-        					
+
         					<img src="<?php echo get_template_directory_uri(); ?>/images/design1.jpg" alt="">
         				</div>
         				<div class="slider-img imgtwo" >
-        					
+
         					<img src="<?php echo get_template_directory_uri(); ?>/images/design2.jpg" alt="">
         				</div>
         			</div>
@@ -73,7 +73,7 @@
         			</div>
         			<div class="slider-img-box">
         				<div class="slider-img imgone" >
-        					
+
         					<img src="<?php echo get_template_directory_uri(); ?>/images/brand1.jpg" alt="">
         				</div>
         				<div class="slider-img imgtwo" >
@@ -89,7 +89,7 @@
         	</div>
         	<div id="counter"></div>
         </div>
-        
+
         <div class="video-banner-slider">
         	<div class="swiper-container video-swiper ">
         		<div class="swiper-wrapper">
@@ -129,40 +129,15 @@
         		</section>
         		<section class="home-client">
         			<div class="home-client-heading">
-        				<h6>OUR CLIENTS</h6>
+        				<h6><?php the_field('our_clients_heading', 'option'); ?></h6>
         			</div>
         			<div class="client-list">
         				<div class="client-slider owl-carousel owl-theme">
-        					<div class="client-img">
-        						<img src="<?php echo get_template_directory_uri(); ?>/images/cl1.png" alt="">
-        					</div>
-        					<div class="client-img">
-        						<img src="<?php echo get_template_directory_uri(); ?>/images/cl2.png" alt="">
-        					</div>
-        					<div class="client-img">
-        						<img src="<?php echo get_template_directory_uri(); ?>/images/cl3.png" alt="">
-        					</div>
-        					<div class="client-img">
-        						<img src="<?php echo get_template_directory_uri(); ?>/images/cl4.png" alt="">
-        					</div>
-        					<div class="client-img">
-        						<img src="<?php echo get_template_directory_uri(); ?>/images/cl5.png" alt="">
-        					</div>
-        					<div class="client-img">
-        						<img src="<?php echo get_template_directory_uri(); ?>/images/cl1.png" alt="">
-        					</div>
-        					<div class="client-img">
-        						<img src="<?php echo get_template_directory_uri(); ?>/images/cl2.png" alt="">
-        					</div>
-        					<div class="client-img">
-        						<img src="<?php echo get_template_directory_uri(); ?>/images/cl3.png" alt="">
-        					</div>
-        					<div class="client-img">
-        						<img src="<?php echo get_template_directory_uri(); ?>/images/cl4.png" alt="">
-        					</div>
-        					<div class="client-img">
-        						<img src="<?php echo get_template_directory_uri(); ?>/images/cl5.png" alt="">
-        					</div>
+        					<?php if( have_rows('cleints', 'option') ): while( have_rows('cleints', 'option') ) : the_row(); ?>
+        						<div class="client-img">
+	        						<img src="<?php the_sub_field('client_image'); ?>" alt="<?php the_sub_field('clients_name'); ?>">
+	        					</div>
+						    <?php endwhile; else : endif; ?>
         				</div>
         			</div>
         		</section>

@@ -29,5 +29,11 @@ function my_acf_op_init() {
             'menu_title'  => __('Social Media Info'),
             'parent_slug' => $parent['menu_slug'],
         ));
+        // Add sub page.
+        $child = acf_add_options_page(array(
+            'page_title'  => __('Clients Settings'),
+            'menu_title'  => __('Clients Media Info'),
+            'parent_slug' => $parent['menu_slug'],
+        ));
     }
 }
